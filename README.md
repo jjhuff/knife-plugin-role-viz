@@ -9,5 +9,5 @@ Copy to `~/.chef/plugins/knife/` or similar.
 `knife role viz | dot -Tpng -o roles.png && display roles.png`
 
 ##Examples
-![first example](examples/roles1.png)
-![second example](examples/roles2.png)
+![first example](https://github.com/jjhuff/knife-plugin-role-viz/raw/master/examples/roles1.png)
+![second example](https://github.com/jjhuff/knife-plugin-role-viz/raw/master/examples/roles2.png)
