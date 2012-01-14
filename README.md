@@ -8,3 +8,6 @@ Copy to `~/.chef/plugins/knife/` or similar.
 ##Usage
 `knife role viz | dot -Tpng -o roles.png && display roles.png`
 
+##Examples
+!(examples/roles1.png)
+!(examples/roles2.png)
