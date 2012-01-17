@@ -10,16 +10,16 @@ module RoleVizPlugins
     def run
       roles = Chef::Role.list(true)
       puts 'digraph chef_roles {'
-#      roles.each_value do |r|
-#        puts "  #{r.name};"
-#      end
       roles.each_value do |r|
+        filtered_r = "#{r.name.gsub(':', '_').gsub('-', '_').gsub('.', '_')}"
         r.run_list.role_names.each do |i|
-            puts "  #{r.name} -> #{i};"
+            filtered_i = "#{i.gsub(':', '_').gsub('-', '_').gsub('.', '_')}"
+            puts "  #{filtered_r} -> #{filtered_i};"
         end
-#        r.run_list.recipe_names.each do |i|
-#            puts "  #{r.name} -> #{i.gsub(':', '_').gsub('-', '_')};"
-#        end
+        #r.run_list.recipe_names.each do |i|
+        #    filtered_i = "#{i.gsub(':', '_').gsub('-', '_').gsub('.', '_')}"
+        #    puts "  #{filtered_r} -> #{filtered_i};"
+        #end
       end
       puts '}'
     end
